@@ -1,6 +1,7 @@
 {
   "name": "msgpacker",
   "bin": "./bin.js",
+  "version": "0.0.1",
   "scripts": {
     "test:pack": "./bin.js pack . project.pack",
     "test:unpack": "./bin.js unpack project.pack project"
