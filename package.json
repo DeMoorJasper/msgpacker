@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test:pack": "node pack.js . project.pack",
+    "test:unpack": "node unpack.js project.pack project"
+  },
+  "dependencies": {
+    "@msgpack/msgpack": "^2.8.0"
+  }
+}
