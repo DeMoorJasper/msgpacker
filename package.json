@@ -1,7 +1,9 @@
 {
+  "name": "msgpacker",
+  "bin": "./bin.js",
   "scripts": {
-    "test:pack": "node pack.js . project.pack",
-    "test:unpack": "node unpack.js project.pack project"
+    "test:pack": "./bin.js pack . project.pack",
+    "test:unpack": "./bin.js unpack project.pack project"
   },
   "dependencies": {
     "@msgpack/msgpack": "^2.8.0"

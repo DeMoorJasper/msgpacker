@@ -16,7 +16,7 @@ function processDirectory(dirpath, root) {
   }
 }
 
-const myArgs = process.argv.slice(2);
+const myArgs = process.argv.slice(3);
 if (myArgs.length < 2) {
   console.log("Usage: pack <source> <destination>");
   console.log("Example: pack ./nextjs-example ../next-example.pack");

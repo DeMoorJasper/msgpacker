@@ -2,7 +2,7 @@ const msgpack = require("@msgpack/msgpack");
 const fs = require("fs");
 const path = require("path");
 
-const myArgs = process.argv.slice(2);
+const myArgs = process.argv.slice(3);
 if (myArgs.length < 2) {
   console.log("Usage: unpack <source> <destination>");
   console.log("Example: unpack ./next-example.pack ./next-example");
