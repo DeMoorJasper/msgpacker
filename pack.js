@@ -7,11 +7,13 @@ function processDirectory(dirpath, root) {
   const entries = fs.readdirSync(dirpath, { withFileTypes: true });
   for (const entry of entries) {
     const fullpath = path.join(dirpath, entry.name);
+    const indexPath = "/" + path.relative(root, fullpath);
     if (entry.isFile()) {
-      const indexPath = "/" + path.relative(root, fullpath);
       index[indexPath] = fs.readFileSync(fullpath);
-    } else {
+    } else if (entry.isDirectory()) {
       processDirectory(fullpath, root);
+    } else {
+      console.warn("Skipping", indexPath, "as it is not a file or directory");
     }
   }
 }
@@ -32,7 +34,7 @@ try {
 }
 
 console.log("Indexing file tree...");
-const sourceDir = path.join(process.cwd(), myArgs[0])
+const sourceDir = path.join(process.cwd(), myArgs[0]);
 processDirectory(sourceDir, process.cwd());
 console.log("Indexed", Object.keys(index).length, "files");
 
